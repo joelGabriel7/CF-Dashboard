@@ -1,0 +1,767 @@
+/* Contract Detail Component Styles */
+
+/* Main container */
+.contract-detail-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header styles */
+.detail-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.detail-title-area {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.detail-title-area h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.back-button {
+    margin-right: 1rem;
+}
+
+.contract-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Status badges - both class formats for compatibility */
+.status-badge,
+.badge-draft,
+.badge-pending,
+.badge-signed,
+.badge-expired {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-badge.draft,
+.badge-draft {
+    background-color: var(--warning-light);
+    color: var(--warning-dark);
+}
+
+.status-badge.pending,
+.badge-pending {
+    background-color: var(--info-light);
+    color: var(--info-dark);
+}
+
+.status-badge.signed,
+.badge-signed {
+    background-color: var(--success-light);
+    color: var(--success-dark);
+}
+
+.status-badge.expired,
+.badge-expired {
+    background-color: var(--danger-light);
+    color: var(--danger-dark);
+}
+
+.type-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    background-color: var(--surface-variant);
+    color: var(--text-secondary);
+}
+
+.detail-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Content layout */
+.contract-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+}
+
+/* Main content area */
+.contract-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Detail sections */
+.detail-section {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.detail-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.detail-value {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Contract summary */
+.contract-summary {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.contract-summary h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+/* Parties section */
+.parties-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.party-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #FFFFFF;
+}
+
+.party-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.party-header h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.signed-badge {
+    color: var(--success);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.unsigned-badge {
+    color: var(--warning);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.party-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Sidebar */
+.contract-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sidebar-section {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.sidebar-section h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+/* History timeline */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.timeline-item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 1.5rem;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--border-color);
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -2rem;
+    width: 2rem;
+    height: 2rem;
+    background: #FFFFFF;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+.timeline-content {
+    background: var(--surface-variant);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.timeline-content h4 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+}
+
+.timeline-date {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+/* Tags */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: var(--surface-variant);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+}
+
+.no-tags {
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 0.875rem;
+}
+
+/* Document list */
+.document-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.document-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.document-list li:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.document-list i {
+    color: var(--text-secondary);
+}
+
+.document-list a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.document-list a:hover {
+    text-decoration: underline;
+}
+
+/* Loading and Not Found states */
+.loading-container,
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    text-align: center;
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 2rem;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dark mode support */
+.dark-mode .detail-section,
+.dark-mode .sidebar-section,
+.dark-mode .detail-header,
+.dark-mode .party-card,
+.dark-mode .loading-container,
+.dark-mode .not-found-container {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    box-shadow: var(--shadow-dark-sm);
+}
+
+.dark-mode .detail-title-area h1 {
+    color: var(--dark-text-primary);
+}
+
+.dark-mode .detail-section h2,
+.dark-mode .sidebar-section h3,
+.dark-mode .contract-summary h3,
+.dark-mode .timeline-content h4,
+.dark-mode .party-header h3 {
+    color: var(--dark-text-primary);
+}
+
+.dark-mode .detail-label,
+.dark-mode .timeline-date,
+.dark-mode .tag,
+.dark-mode .no-tags,
+.dark-mode .document-list i {
+    color: var(--dark-text-secondary);
+}
+
+.dark-mode .detail-value,
+.dark-mode .timeline-content p,
+.dark-mode .party-details {
+    color: var(--dark-text-primary);
+}
+
+.dark-mode .timeline-content {
+    background: var(--dark-surface-variant);
+}
+
+.dark-mode .timeline-item:not(:last-child)::before {
+    background-color: var(--dark-border);
+}
+
+.dark-mode .timeline-icon {
+    background: var(--dark-surface);
+    border-color: var(--color-primary);
+}
+
+.dark-mode .tag {
+    background: var(--dark-surface-variant);
+}
+
+.dark-mode .document-list li:not(:last-child) {
+    border-bottom-color: var(--dark-border);
+}
+
+.dark-mode .not-found-content i,
+.dark-mode .not-found-content h2,
+.dark-mode .not-found-content p {
+    color: var(--dark-text-secondary);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .contract-detail-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contract-sidebar {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .contract-detail-container {
+        padding: 1rem;
+    }
+    
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .parties-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-title-area {
+        flex-direction: column;
+    }
+    
+    .detail-actions {
+        flex-direction: column;
+    }
+    
+    .detail-actions button {
+        width: 100%;
+    }
+}
+
+/* Not Found State */
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    padding: 2rem;
+}
+
+.not-found-content {
+    text-align: center;
+    max-width: 400px;
+}
+
+.not-found-content i {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.not-found-content h2 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.not-found-content p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Dark mode support */
+.dark-mode .not-found-content i,
+.dark-mode .not-found-content h2,
+.dark-mode .not-found-content p {
+    color: var(--dark-text-secondary);
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+}
+
+.modal-container {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-overlay.show .modal-container {
+    transform: translateY(0);
+}
+
+.modal-container.modal-sm {
+    max-width: 400px;
+}
+
+.modal-container.modal-lg {
+    max-width: 800px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #F8F9FA;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    background-color: #FFFFFF;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    background-color: #F8F9FA;
+}
+
+/* Form styles for modals */
+.modal-body .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.modal-body .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Improved form controls */
+.modal-body .form-control {
+    width: 100%;
+    padding: 0.75rem 1rem; /* Taller inputs */
+    border: 2px solid #E0E0E0; /* More visible border */
+    border-radius: 8px; /* Increased border radius */
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    color: #333333;
+}
+
+.modal-body .form-control:hover {
+    border-color: #CCCCCC;
+}
+
+.modal-body .form-control:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.15);
+}
+
+/* Select inputs */
+.modal-body select.form-control {
+    appearance: none; /* Remove default appearance */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem; /* Space for the arrow */
+}
+
+/* Textarea inputs */
+.modal-body textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.modal-body .form-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-body .form-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+/* Dark mode form controls */
+.dark-mode .modal-body .form-control {
+    background-color: #2D2D2D;
+    border-color: #3D3D3D;
+    color: #E0E0E0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .modal-body .form-control:hover {
+    border-color: #4D4D4D;
+}
+
+.dark-mode .modal-body .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.25);
+}
+
+.dark-mode .modal-body select.form-control {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23BBBBBB' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.dark-mode .modal-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive styles for modals */
+@media (max-width: 768px) {
+    .modal-container {
+        width: 95%;
+    }
+    
+    .modal-container.modal-lg {
+        max-width: 95%;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-footer button {
+        width: 100%;
+    }
+}
+
+/* Dark mode support for modals */
+.dark-mode .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.85); /* Darker background for dark mode */
+}
+
+.dark-mode .modal-container {
+    background-color: #1E1E1E; /* Solid dark background in dark mode */
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .modal-header,
+.dark-mode .modal-footer {
+    border-color: var(--border-dark);
+    background-color: #252525; /* Darker gray for header/footer in dark mode */
+}
+
+.dark-mode .modal-body {
+    background-color: #1E1E1E; /* Ensure body is also solid dark in dark mode */
+}
+
+.dark-mode .modal-body .form-section {
+    border-color: var(--border-dark);
+}
+
+/* Dark mode form controls */
+.dark-mode .modal-body .form-control {
+    background-color: #2D2D2D;
+    border-color: #3D3D3D;
+    color: #E0E0E0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .modal-body .form-control:hover {
+    border-color: #4D4D4D;
+}
+
+.dark-mode .modal-body .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.25);
+}
+
+.dark-mode .modal-body select.form-control {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23BBBBBB' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.dark-mode .modal-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+} 

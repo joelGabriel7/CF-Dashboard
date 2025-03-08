@@ -1,0 +1,515 @@
+/* Dashboard Component Styles */
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+/* Welcome Section */
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.welcome-text h1 {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-2xl);
+}
+
+.welcome-text p {
+    color: var(--color-neutral-600);
+    margin-bottom: 0;
+}
+
+.welcome-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+/* Metrics Section */
+.metrics-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-neutral-800);
+    font-weight: var(--font-weight-semibold);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+}
+
+/* Metric Cards */
+.metric-card {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    height: 100%;
+}
+
+.metric-content {
+    padding: var(--spacing-lg);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-card-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--transition-fast);
+    height: 100%;
+    display: block;
+}
+
+.metric-card-link:hover {
+    transform: translateY(-4px);
+}
+
+.metric-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.metric-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-md);
+    color: white;
+    font-size: var(--font-size-lg);
+}
+
+.metric-icon.bg-primary {
+    background-color: var(--color-primary);
+}
+
+.metric-icon.bg-success {
+    background-color: var(--color-success);
+}
+
+.metric-icon.bg-warning {
+    background-color: var(--color-warning);
+}
+
+.metric-icon.bg-error {
+    background-color: var(--color-error);
+}
+
+.metric-title {
+    margin: 0;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-neutral-700);
+}
+
+.metric-value {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-neutral-900);
+}
+
+.metric-trend {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-600);
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}
+
+.metric-trend.positive {
+    color: var(--color-success);
+}
+
+.metric-trend.negative {
+    color: var(--color-error);
+}
+
+.metric-trend i {
+    margin-right: var(--spacing-xs);
+}
+
+/* Charts Section */
+.charts-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+.chart-card {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-lg);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.chart-title {
+    margin: 0;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-neutral-800);
+    margin-right: var(--spacing-sm);
+}
+
+.chart-legend {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-700);
+    margin-bottom: var(--spacing-xs);
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: var(--spacing-xs);
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.created-color {
+    background-color: rgba(66, 133, 244, 0.7); /* Blue */
+}
+
+.signed-color {
+    background-color: rgba(52, 168, 83, 0.7); /* Green */
+}
+
+.expired-color {
+    background-color: rgba(234, 67, 53, 0.7); /* Red */
+}
+
+.chart-body {
+    flex: 1;
+    position: relative;
+    min-height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Distribution chart specific styles */
+.distribution-chart-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+#distribution-chart {
+    max-width: 180px;
+    max-height: 180px;
+    width: 100%;
+    height: auto;
+}
+
+.distribution-legend {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-left: var(--spacing-md);
+    max-width: 120px;
+    min-width: 0;
+}
+
+.legend-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--font-size-sm);
+}
+
+/* Recent Contracts Section */
+.recent-contracts-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.view-all-link {
+    display: flex;
+    align-items: center;
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.view-all-link i {
+    margin-left: var(--spacing-xs);
+    transition: transform var(--transition-fast);
+}
+
+.view-all-link:hover i {
+    transform: translateX(3px);
+}
+
+.recent-contracts-table {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table th, .table td {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.table th {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-700);
+    background-color: var(--color-neutral-100);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table tbody tr:hover {
+    background-color: var(--color-neutral-100);
+}
+
+.contract-link {
+    color: var(--color-neutral-900);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-fast);
+}
+
+.contract-link:hover {
+    color: var(--color-primary);
+}
+
+.contract-type {
+    color: var(--color-neutral-600);
+    font-size: var(--font-size-sm);
+}
+
+.contract-date {
+    color: var(--color-neutral-600);
+    font-size: var(--font-size-sm);
+}
+
+.contract-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.empty-state {
+    padding: var(--spacing-xl);
+    text-align: center;
+    color: var(--color-neutral-600);
+    font-style: italic;
+}
+
+/* Dark mode support */
+body.dark-mode .section-title {
+    color: var(--dark-text-primary);
+}
+
+body.dark-mode .welcome-text p {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .metric-card,
+body.dark-mode .chart-card,
+body.dark-mode .recent-contracts-table,
+body.dark-mode .welcome-section {
+    background-color: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    box-shadow: var(--shadow-dark-sm);
+}
+
+body.dark-mode .metric-title {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .metric-value {
+    color: var(--dark-text-primary);
+}
+
+body.dark-mode .metric-trend {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .chart-title {
+    color: var(--dark-text-primary);
+}
+
+body.dark-mode .legend-item {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .table th {
+    background-color: var(--dark-surface-variant);
+    color: var(--dark-text-secondary);
+    border-bottom-color: var(--dark-border);
+}
+
+body.dark-mode .table td {
+    border-bottom-color: var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.dark-mode .table tbody tr:hover {
+    background-color: var(--dark-surface-variant);
+}
+
+body.dark-mode .contract-link {
+    color: var(--dark-text-primary);
+}
+
+body.dark-mode .contract-link:hover {
+    color: var(--color-primary-light);
+}
+
+body.dark-mode .contract-type {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .contract-date {
+    color: var(--dark-text-secondary);
+}
+
+body.dark-mode .empty-state {
+    color: var(--dark-text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .charts-grid {
+        grid-template-columns: 3fr 2fr;
+    }
+}
+
+@media (max-width: 991px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .distribution-chart-body {
+        justify-content: center;
+    }
+    
+    .distribution-legend {
+        max-width: 200px;
+    }
+    
+    #distribution-chart {
+        max-width: 200px;
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    .welcome-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .welcome-text {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .welcome-actions {
+        width: 100%;
+    }
+    
+    .welcome-actions button {
+        flex: 1;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .table thead {
+        display: none;
+    }
+    
+    .table tbody tr {
+        display: block;
+        padding: var(--spacing-md);
+        border-bottom: 1px solid var(--color-neutral-200);
+    }
+    
+    .table td {
+        display: block;
+        padding: var(--spacing-xs) 0;
+        border: none;
+        text-align: right;
+    }
+    
+    .table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-neutral-700);
+    }
+    
+    .contract-actions {
+        justify-content: flex-end;
+    }
+} 

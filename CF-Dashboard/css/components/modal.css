@@ -1,0 +1,254 @@
+/* Modal Component Styles */
+
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75); /* Increased opacity for a more solid background */
+    backdrop-filter: blur(3px); /* Add blur effect for a modern look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px; /* Add padding for mobile */
+}
+
+.modal-overlay.show {
+    opacity: 1;
+}
+
+/* Modal container */
+.modal-container {
+    background-color: #FFFFFF; /* Solid white background in light mode */
+    border-radius: 12px; /* Increased border radius */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+}
+
+.modal-overlay.show .modal-container {
+    transform: translateY(0);
+}
+
+.modal-container.modal-sm {
+    max-width: 400px;
+}
+
+.modal-container.modal-lg {
+    max-width: 800px;
+}
+
+/* Modal header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem; /* Increased padding */
+    border-bottom: 1px solid var(--border-color);
+    background-color: #F8F9FA; /* Light gray background for header */
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    font-weight: 600; /* Slightly bolder */
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Modal body */
+.modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    background-color: #FFFFFF; /* Ensure body is also solid white */
+}
+
+/* Modal footer */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem; /* Increased padding */
+    border-top: 1px solid var(--border-color);
+    background-color: #F8F9FA; /* Light gray background for footer */
+}
+
+/* Form styles for modals */
+.modal-body .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.modal-body .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Improved form controls */
+.modal-body .form-control {
+    width: 100%;
+    padding: 0.75rem 1rem; /* Taller inputs */
+    border: 2px solid #E0E0E0; /* More visible border */
+    border-radius: 8px; /* Increased border radius */
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    color: #333333;
+}
+
+.modal-body .form-control:hover {
+    border-color: #CCCCCC;
+}
+
+.modal-body .form-control:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.15);
+}
+
+/* Select inputs */
+.modal-body select.form-control {
+    appearance: none; /* Remove default appearance */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem; /* Space for the arrow */
+}
+
+/* Textarea inputs */
+.modal-body textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.modal-body .form-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-body .form-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+/* Modal animations */
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-overlay.animate {
+    animation: modalFadeIn 0.3s forwards;
+}
+
+.modal-overlay.animate .modal-container {
+    animation: modalSlideIn 0.3s forwards;
+}
+
+/* Dark mode support for modals */
+.dark-mode .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.85); /* Darker background for dark mode */
+}
+
+.dark-mode .modal-container {
+    background-color: #1E1E1E; /* Solid dark background in dark mode */
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .modal-header,
+.dark-mode .modal-footer {
+    border-color: var(--border-dark);
+    background-color: #252525; /* Darker gray for header/footer in dark mode */
+}
+
+.dark-mode .modal-body {
+    background-color: #1E1E1E; /* Ensure body is also solid dark in dark mode */
+}
+
+.dark-mode .modal-body .form-section {
+    border-color: var(--border-dark);
+}
+
+/* Dark mode form controls */
+.dark-mode .modal-body .form-control {
+    background-color: #2D2D2D;
+    border-color: #3D3D3D;
+    color: #E0E0E0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .modal-body .form-control:hover {
+    border-color: #4D4D4D;
+}
+
+.dark-mode .modal-body .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.25);
+}
+
+.dark-mode .modal-body select.form-control {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23BBBBBB' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* Responsive styles for modals */
+@media (max-width: 768px) {
+    .modal-container {
+        width: 95%;
+    }
+    
+    .modal-container.modal-lg {
+        max-width: 95%;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-footer button {
+        width: 100%;
+    }
+} 
